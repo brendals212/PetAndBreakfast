@@ -1,0 +1,21 @@
+<h1>Pets#index</h1>
+<div class="container">
+  <div class="card-trip">
+      <% @pets.each do|pet| %>
+    <img src=<%= pet.photo %> />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= pet.name %></h2>
+      <p><strong>description:</strong> <%= pet.description %></p>
+      <p><strong>breed:</strong> <%= pet.breed %></p>
+      <p><strong>age</strong>: <%= pet.age %></p>
+      <p><strong>color</strong>: <%= pet.color %></p>
+      <p><strong>needs</strong>: <%= pet.needs %></p>
+
+    </div>
+    <h2 class="card-trip-pricing"><%= pet.price%>$ per week</h2>
+    <img src= <%=pet.user.photo%> class= "card-trip-user avatar-bordered" >
+  </div>
+  <% end %>
+</div>
+</div>
