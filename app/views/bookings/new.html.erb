@@ -3,9 +3,9 @@
   <div class="details">
     <div class="booking-details">
          <h3> <%= @start_date %> ---> <%= @end_date %></h3>
-         <p>(<%= @days %> days)</p>
+         <p>(<%= @days.to_i %> days)</p>
          <img src=<%= @owner.photo  %> alt="">
-         <p>from <%= @owner.name %></ @@pet.price %> / 7 ) = <%= @cost %>$</p>
+         <p>from <%= @owner.name %> <%= (@pet.price/7).round(2)%> * <%= @days.to_i%>  = <%= @cost %>$</p>
           <ul>
             <li>Address - <%= @owner.address %></li>
             <li>email - <%= @owner.email %></li>
