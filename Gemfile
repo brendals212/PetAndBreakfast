@@ -15,7 +15,12 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+<<<<<<< Updated upstream
 
+=======
+gem 'cloudinary', '~> 1.9.1'
+gem 'pundit'
+>>>>>>> Stashed changes
 
 group :development do
   gem 'web-console', '>= 3.3.0'
