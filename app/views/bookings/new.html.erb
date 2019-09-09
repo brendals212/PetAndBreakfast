@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Confirme Booking</h1>
+  <div class="details">
+    <div class="booking-details">
+         <h3> <%= @start_date %> ---> <%= @end_date %></h3>
+         <p>(<%= @days %> days)</p>
+         <img src=<%= @owner.photo  %> alt="">
+         <p>from <%= @owner.name %></ @@pet.price %> / 7 ) = <%= @cost %>$</p>
+          <ul>
+            <li>Address - <%= @owner.address %></li>
+            <li>email - <%= @owner.email %></li>
+            <li>view our cancellation Policy</li>
+          </ul>
+    </div>
+      <div class="card-trip">
+        <img src=<%= @pet.photo ? @pet.photo : "https://tevra@pet.com/wp-content/uploads/2017/02/AdobeStock_109191236.jpeg" %> />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%=@pet.name%></h2>
+            <p><strong>description:</strong> <%= @pet.description %></p>
+            <p><strong>breed:</strong> <%= @pet.breed %></p>
+            <p><strong>age</strong>: <%= @pet.age %></p>
+            <p><strong>color</strong>: <%= @pet.color %></p>
+            <p><strong>needs</strong>: <%= @pet.needs %></p>
+            <h2 class="card-trip-pricing"><%= @pet.price%>$ per week</h2>
+            <img src= <%= @pet.user.photo ? @pet.user.photo : "https://cbsnews1.cbsistatic.com/hub/i/2018/11/06/0c1af1b8-155a-458e-b105-78f1e7344bf4/2018-11-06t054310z-1334124005-rc1be15a8050-rtrmadp-3-people-sexiest-man.jpg" %> class="card-trip-user avatar-bordered" >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= simple_form_for [@pet, @booking] do |f| %>
+    <%= f.input :starts_at, input_html: { value: @start_date}, as: :hidden%>
+    <%= f.input :ends_at, input_html: { value: @end_date}, as: :hidden %>
+    <%= f.input :cost, input_html: { value: @cost}, as: :hidden %>
+    <%= f.submit "Confirm", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

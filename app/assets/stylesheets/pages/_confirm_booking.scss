@@ -1,0 +1,26 @@
+.details{
+  display: flex;
+  justify-content: space-between;
+
+  .booking-details {
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+    }
+  }
+  .pet-details {
+    p {
+      font-size: 15px;
+
+    }
+    img {
+      margin-left: 200px;
+      width: 250px;
+      height: 250px;
+    }
+    li {
+      font-size: 13px;
+    }
+  }
+}
