@@ -1,21 +1,26 @@
-<h1>Pets#index</h1>
-<div class="container">
-  <div class="card-trip">
-      <% @pets.each do|pet| %>
-    <img src=<%= pet.photo %> />
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= pet.name %></h2>
-      <p><strong>description:</strong> <%= pet.description %></p>
-      <p><strong>breed:</strong> <%= pet.breed %></p>
-      <p><strong>age</strong>: <%= pet.age %></p>
-      <p><strong>color</strong>: <%= pet.color %></p>
-      <p><strong>needs</strong>: <%= pet.needs %></p>
-
-    </div>
-    <h2 class="card-trip-pricing"><%= pet.price%>$ per week</h2>
-    <img src= <%=pet.user.photo%> class= "card-trip-user avatar-bordered" >
+<h1>All Pets</h1>
+<div class="grid-container">
+  <div class="cards-container">
+    <% @pets.each do|pet| %>
+      <div class="card-trip">
+        <img src=<%= pet.photo %> />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= link_to pet.name, pet_path(pet)  %></h2>
+            <p><strong>description:</strong> <%= pet.description %></p>
+            <p><strong>breed:</strong> <%= pet.breed %></p>
+            <p><strong>age</strong>: <%= pet.age %></p>
+            <p><strong>color</strong>: <%= pet.color %></p>
+            <p><strong>needs</strong>: <%= pet.needs %></p>
+            <h2 class="card-trip-pricing"><%= pet.price%>$ per week</h2>
+            <img src= <%=pet.user.photo%> class= "card-trip-user avatar-bordered" >
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <% end %>
+  <div class = "map-container">
+      <img src="https://www.visualcapitalist.com/wp-content/uploads/2018/03/export-map-share.png" alt="map">
+    </div>
 </div>
-</div>
+
