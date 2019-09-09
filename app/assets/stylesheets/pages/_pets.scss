@@ -1,0 +1,41 @@
+// .grid-container {
+//   display: grid;
+//   grid-template-columns: auto auto auto auto;
+// }
+// .cards-container {
+//   grid-column: 1 / span 2;
+//   display: flex;
+// }
+// .map-container {
+//   grid-column: 3 / 5;
+
+// }
+// .map img{
+//   width: 50%;
+// }
+
+.grid-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  .cards-container  {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    .card-trip {
+      width: 40%;
+    }
+  }
+  .map-container {
+    width: 50%;
+    height: 80%;
+    img {
+      height: 600px;
+      width: 80%;
+    }
+  }
+}
