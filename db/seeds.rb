@@ -11,6 +11,8 @@ User.destroy_all
 
 
 rachel = User.create(email: "rgarih@gmail.com", password: "123456", name: "Cunegonde", address: "32 Ben Yehuda TLV")
+brenda = User.create(email: "brendals212h@gmail.com", password: "123456", name: "Cunende", address: "32 Ben Yehuda TLV")
 
-r_pet1 = Pet.create(name: "boulou", user_id: rachel.id)
-r_pet2 = Pet.create(name: "kitty", user_id: rachel.id)
+
+r_pet1 = Pet.create(name: "boulou", user_id: rachel.id, photo: "https://st3.idealista.com/cms/archivos/styles/idcms_social_mobile/public/2019-02/media/image/pets%201%20pixabay.jpg?fv=eCIcXO0r&itok=hbSGjOxv")
+r_pet2 = Pet.create(name: "kitty", user_id: rachel.id, photo: "https://www.condorferries.co.uk/media/2455/taking-your-pet-5.jpg")

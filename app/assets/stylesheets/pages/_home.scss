@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+body {
+  margin: 0;
+  font-family: "Varela", sans-serif;
+  margin-top: 50px;
+}
+h1 {
+  font-family: "Varela", sans-serif;
+}
+
+#search-form {
+  border-radius: 20px;
+}
