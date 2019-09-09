@@ -1,3 +1,18 @@
 <div class="container">
+  <div class="pet-details-container">
+    <div class="pet-details">
+        <h3><%=@pet.name%></h3>
+        <p><strong>Type:</strong> <%=@pet.pet_type %></p>
+        <p><strong>Age:</strong> <%=@pet.age%></p>
+        <p><strong>Breed:</strong> <%=@pet.breed%></p>
+        <p><strong>Color:</strong> <%=@pet.color%></p>
+        <p><strong>Description:</strong> <%=@pet.description%></p>
+        <p><strong>Needs:</strong> <%=@pet.needs %></p>
 
+    </div>
+    <div class="pet-img-pricing">
+      <img src=<%=@pet.photo%> alt="photo">
+      <p> <%= @pet.price %>$ per week</p>
+    </div>
+  </div>
 </div>
