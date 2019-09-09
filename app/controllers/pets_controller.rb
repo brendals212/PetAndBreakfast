@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
   before_action :find, only: [:show, :edit, :update, :destroy]
-
+  before_action :if_theres_photo, only: [:show, :edit, :update, :destroy]
   def index
     @pets = Pet.all
   end
@@ -47,5 +47,11 @@ class PetsController < ApplicationController
 
   def set_params
     params.require(:pet).permit(:user_id, :name, :picture, :age, :name, :type, :breed, :color, :description, :needs)
+  end
+
+  def if_theres_photo
+    if @pet.photo.nil?
+      @pet.photo = "https://tevrapet.com/wp-content/uploads/2017/02/AdobeStock_109191236.jpeg"
+    end
   end
 end
