@@ -3,16 +3,16 @@
     <div class="row">
       <div class="col-md-4" >
         <div class="search-container">
-          <form action="#" id= "search-form" method="get">
+        <%= form_tag pets_path, method: :get do %>
             <h3 class="text-center mb-5">Book Your Next Pet</h2>
               <div class="form-row">
                 <div class="col-6 form-group">
                   <label for="location">Location</label>
-                  <input type="text" class="form-control" id="location" placeholder="Tel Aviv">
+                  <input name="location" type="text" class="form-control" id="location" placeholder="Tel Aviv">
                 </div>
               </div>
               <label for="type-of-pet">Type of Animal</label>
-              <select id="type-of-pet" class="form-control">
+              <select name="animal" id="type-of-pet" class="form-control">
                 <option value="">Dog</option>
                 <option value="">Cat</option>
                 <option value="">Snake</option>
@@ -28,7 +28,7 @@
                 <option value="">Not shown</option>
               </select>
               <input type="submit" value="submit" class="btn btn-success btn-lg w-100">
-            </form>
+           <% end %>
           </div>
         </div>
       </div>

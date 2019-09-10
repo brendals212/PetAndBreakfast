@@ -2,6 +2,9 @@
 <div class="grid-container">
   <div class="cards-container">
     <% @pets.each do|pet| %>
+    <%# raise %>
+<%# cl_image_path pet.photo, height: 300, width: 400, crop: :fill %>
+
       <div class="card-trip">
         <img src=<%= pet.photo ? pet.photo : "https://tevrapet.com/wp-content/uploads/2017/02/AdobeStock_109191236.jpeg" %> />
         <div class="card-trip-infos">
