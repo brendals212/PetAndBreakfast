@@ -3,6 +3,20 @@ class PetsController < ApplicationController
   before_action :if_theres_photo, only: [:show, :edit, :update, :destroy]
   def index
     @pets = Pet.all
+    @users = User.geocoded
+    @markers = []
+    @users.each do |user|
+      if user.pets.empty?
+        next
+      else
+        @markers << {
+          lat: user.latitude,
+          lng: user.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { user: user })
+        }
+      end
+    end
+    # raise
   end
 
   def new
@@ -12,9 +26,9 @@ class PetsController < ApplicationController
   def create
     #users\:id\pets
     @pet = Pet.new(set_params)
-    @pet.user = current_user[:id]
+    @pet.user = current_user
     if @pet.save
-      redirect to pet_path(@pet)
+      redirect_to pet_path(@pet)
     else
       render :new
     end
@@ -47,7 +61,7 @@ class PetsController < ApplicationController
   end
 
   def set_params
-    params.require(:pet).permit(:user_id, :name, :picture, :age, :name, :type, :breed, :color, :description, :needs)
+    params.require(:pet).permit(:user_id, :name, :picture, :age, :name, :type, :breed, :color, :description, :needs, :location, :photo, :pet_type)
   end
 
   def if_theres_photo
