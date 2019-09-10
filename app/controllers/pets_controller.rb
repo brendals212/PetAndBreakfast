@@ -20,7 +20,6 @@ class PetsController < ApplicationController
         }
       end
     end
-    # raise
   end
 
   def new
