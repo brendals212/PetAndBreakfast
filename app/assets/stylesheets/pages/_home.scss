@@ -1,25 +1,31 @@
 // Specific CSS for your home-page
 body {
   margin: 0;
-  font-family: "Varela", sans-serif;
+  font-family: 'IBM Plex Serif', serif;
 }
 h1 {
-  font-family: "Varela", sans-serif;
+  font-family: 'IBM Plex Serif', serif;
 }
 h2 {
-  font-family: "Varela", sans-serif;
+  font-family: 'IBM Plex Serif', serif;
   margin: 0 auto;
   text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+h3 {
+  font-family: 'IBM Plex Serif', serif;
 }
 
 .search-form {
-  border-radius: 100px;
+  border-radius: 10% / 50%;
 }
 
 .banner {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  border-radius: 10% / 50%;
 }
 
 .banner h1 {
@@ -44,5 +50,13 @@ h2 {
 .search-container {
   background:white;
   border: 50px;
-
+  padding: 20px;
  }
+ .w-100 {
+  margin-top: 23px;
+ }
+
+.carou-img{
+  height:300px;
+  width:500px;
+}
