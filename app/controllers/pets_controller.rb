@@ -3,6 +3,20 @@ class PetsController < ApplicationController
   before_action :if_theres_photo, only: [:show, :edit, :update, :destroy]
   def index
     @pets = Pet.all
+    @users = User.geocoded
+    @markers = []
+    @users.each do |user|
+      if user.pets.empty?
+        next
+      else
+        @markers << {
+          lat: user.latitude,
+          lng: user.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { user: user })
+        }
+      end
+    end
+    # raise
   end
 
   def new

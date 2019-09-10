@@ -1,0 +1,9 @@
+<div class="info_Window" >
+  <% user.pets.each do |pet| %>
+    <p><%= pet.pet_type %></p>
+    <h3><%=link_to pet.name, pet_path(pet) %></h3>
+    <p><%= pet.price %>$ per week</p>
+    <%= cl_image_tag pet.photo%>
+    <p><%= user.address %></p>
+  <% end %>
+</div>
