@@ -3,6 +3,10 @@
     <%= image_tag "logo.png" %>
     <% end %>
 
+    <div class="the-name">
+      <h1>PetAndBreakfast</h1>
+    </div>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -16,9 +20,6 @@
         </li>
         <li class="nav-item active">
           <%= link_to "View All Pets", "/pets", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

@@ -3,7 +3,12 @@ class PetsController < ApplicationController
   before_action :if_theres_photo, only: [:show, :edit, :update, :destroy]
   def index
 
-    @pets = Pet.all
+    if params[:location].present?
+      @pets = Pet.where(location: params[:location])
+    else
+      @pets = Pet.all
+    end
+
     @users = User.geocoded
     @markers = []
     @users.each do |user|
@@ -17,7 +22,6 @@ class PetsController < ApplicationController
         }
       end
     end
-    # raise
   end
 
   def new
