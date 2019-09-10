@@ -8,10 +8,10 @@
         <p><strong>Color:</strong> <%=@pet.color%></p>
         <p><strong>Description:</strong> <%=@pet.description%></p>
         <p><strong>Needs:</strong> <%=@pet.needs %></p>
-
+        <img src=<%=@pet.photo%> alt="photo">
     </div>
+    <% if current_user != @pet.user %>
     <div class="pet-img-pricing">
-      <img src=<%=@pet.photo%> alt="photo">
       <p> <%= @pet.price %>$ per week</p>
       <h3>Book the lovely <%= @pet.name %></h3>
       <%= simple_form_for(:dates, url: new_pet_booking_path(@pet), method: :get) do |f| %>
@@ -19,6 +19,7 @@
        <%=f.input :ends_at, as: :date   %>
        <%= f.submit "book" %>
       <% end %>
+        <% end %>
     </div>
   </div>
 </div>
