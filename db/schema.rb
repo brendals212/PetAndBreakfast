@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2019_09_09_114321) do
     t.float "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "starts_at"
+    t.date "ends_at"
     t.index ["pet_id"], name: "index_bookings_on_pet_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
