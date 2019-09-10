@@ -12,9 +12,9 @@ class PetsController < ApplicationController
   def create
     #users\:id\pets
     @pet = Pet.new(set_params)
-    @pet.user = current_user[:id]
+    @pet.user = current_user
     if @pet.save
-      redirect to pet_path(@pet)
+      redirect_to pet_path(@pet)
     else
       render :new
     end
@@ -47,7 +47,7 @@ class PetsController < ApplicationController
   end
 
   def set_params
-    params.require(:pet).permit(:user_id, :name, :picture, :age, :name, :type, :breed, :color, :description, :needs)
+    params.require(:pet).permit(:user_id, :name, :picture, :age, :name, :type, :breed, :color, :description, :needs, :location)
   end
 
   def if_theres_photo
