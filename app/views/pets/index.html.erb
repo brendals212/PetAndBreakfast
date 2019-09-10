@@ -20,7 +20,11 @@
     <% end %>
   </div>
   <div class = "map-container">
-      <img src="https://www.visualcapitalist.com/wp-content/uploads/2018/03/export-map-share.png" alt="map">
+    <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+  </div>
 </div>
 
