@@ -30,6 +30,7 @@ class PetsController < ApplicationController
     #users\:id\pets
     @pet = Pet.new(set_params)
     @pet.user = current_user
+    @pet.location = user.address
     if @pet.save
       redirect_to pet_path(@pet)
     else
