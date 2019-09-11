@@ -3,16 +3,21 @@
   justify-content: space-between;
 
   .booking-details {
+    width: 100%;
     img {
       width: 100px;
       height: 100px;
       border-radius: 10px;
     }
+    ul{
+      list-style: none;
+    }
+
   }
+
   .pet-details {
     p {
       font-size: 15px;
-
     }
     img {
       margin-left: 200px;

@@ -1,8 +1,10 @@
+require 'date'
 class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     @pet = @booking.pet
     @owner = @pet.user
+    @date = DateTime.now
   end
 
   def new
@@ -20,7 +22,6 @@ class BookingsController < ApplicationController
     pet = Pet.find(params[:pet_id])
     booking.pet = pet
     booking.user = current_user
-
     if booking.save
       redirect_to booking_path(booking)
     else
@@ -28,9 +29,15 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    booking = Booking.find(params[:id])
+    booking.update(review: permit_params[:review])
+    redirect_to booking_path(booking)
+  end
+
   private
 
   def permit_params
-    params.require(:booking).permit(:cost, :starts_at, :ends_at)
+    params.require(:booking).permit(:cost, :starts_at, :ends_at, :review)
   end
 end

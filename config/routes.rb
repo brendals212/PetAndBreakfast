@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :pets do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:show]
+  resources :bookings, only: [:show, :update]
   resources :pets
   resources :users, only: [:edit, :update]
   resources :dashboard do
