@@ -1,11 +1,11 @@
 <div class="container">
-  <h1>Confirme Booking</h1>
+  <h1>Confirm Booking</h1>
   <div class="details">
     <div class="booking-details">
          <h3> <%= @start_date %> ---> <%= @end_date %></h3>
          <p>(<%= @days.to_i %> days)</p>
          <img src=<%= @owner.photo  %> alt="">
-         <p>from <%= @owner.name %> <%= (@pet.price/7).round(2)%> * <%= @days.to_i%>  = <%= @cost %>$</p>
+         <p>  The price is <%= @cost %>$</p>
           <ul>
             <li>Address - <%= @owner.address %></li>
             <li>email - <%= @owner.email %></li>
@@ -33,7 +33,10 @@
     <%= f.input :starts_at, input_html: { value: @start_date}, as: :hidden%>
     <%= f.input :ends_at, input_html: { value: @end_date}, as: :hidden %>
     <%= f.input :cost, input_html: { value: @cost}, as: :hidden %>
-    <%= f.submit "Confirm", class: "btn btn-primary" %>
+    <%= f.submit "Confirm", class: "btn btn-primary login-button" %>
     <% end %>
+<div class="go-back">
+  <%= link_to "Back to the P&B", root_path, class: "btn btn-primary login-button" %>
+</div>
   </div>
 </div>

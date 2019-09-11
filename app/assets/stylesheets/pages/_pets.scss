@@ -13,7 +13,19 @@
 // .map img{
 //   width: 50%;
 // }
-
+.all {
+  text-align: center;
+  margin-top: 20px;
+  font-variant: small-caps;
+  text-shadow: 1px 1px 2px pink;
+  font-size: 40px;
+}
+.card-trip-infos a {
+  color: #33ffba;
+  font-variant: small-caps;
+  text-shadow: 1px 1px 2px pink;
+  font-size: 25px;
+}
 .grid-container {
   height: 100%;
   width: 100%;
