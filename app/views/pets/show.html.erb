@@ -11,15 +11,19 @@
         <img src=<%=@pet.photo%> alt="photo">
     </div>
     <% if current_user != @pet.user %>
-    <div class="pet-img-pricing">
-      <p> <%= @pet.price %>$ per week</p>
-      <h3>Book the lovely <%= @pet.name %></h3>
-      <%= simple_form_for(:dates, url: new_pet_booking_path(@pet), method: :get) do |f| %>
-        <%=f.input :starts_at, as: :date   %>
-       <%=f.input :ends_at, as: :date   %>
-       <%= f.submit "book" %>
-      <% end %>
+      <div class="pet-img-pricing">
+        <p> <%= @pet.price %>$ per week</p>
+        <h3>Book the lovely <%= @pet.name %></h3>
+          <%= simple_form_for(:dates, url: new_pet_booking_path(@pet), method: :get) do |f| %>
+            <%=f.input :starts_at, as: :date   %>
+            <%=f.input :ends_at, as: :date   %>
+            <%= f.submit "book" %>
+          <% end %>
+      <% else %>
+        <%= simple_form_for @pet, url: pet_path(@pet), method: :delete do |f|%>
+        <%= f.submit "Delete"%>
         <% end %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show]
   resources :pets
+  resources :users, only: [:edit, :update]
   resources :dashboard do
-    collection do
+    member do
       get 'profile'
     end
   end
