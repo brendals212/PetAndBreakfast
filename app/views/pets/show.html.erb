@@ -1,28 +1,31 @@
 <div class="container">
   <div class="pet-details-container">
     <div class="pet-details">
-        <h3><%=@pet.name%></h3>
-        <%= cl_image_tag @pet.photo%>
-        <p><strong>Type:</strong> <%=@pet.pet_type %></p>
-        <p><strong>Age:</strong> <%=@pet.age%></p>
-        <p><strong>Breed:</strong> <%=@pet.breed%></p>
-        <p><strong>Color:</strong> <%=@pet.color%></p>
-        <p><strong>Description:</strong> <%=@pet.description%></p>
-        <p><strong>Needs:</strong> <%=@pet.needs %></p>
+      <h3><%=@pet.name%></h3>
+      <%= cl_image_tag @pet.photo%>
+      <p><strong>Type:</strong> <%=@pet.pet_type %></p>
+      <p><strong>Age:</strong> <%=@pet.age%></p>
+      <p><strong>Breed:</strong> <%=@pet.breed%></p>
+      <p><strong>Color:</strong> <%=@pet.color%></p>
+      <p><strong>Description:</strong> <%=@pet.description%></p>
+      <p><strong>Needs:</strong> <%=@pet.needs %></p>
     </div>
     <% if current_user != @pet.user %>
-      <div class="pet-img-pricing">
-        <p> <%= @pet.price %>$ per week</p>
-        <h3>Book the lovely <%= @pet.name %></h3>
-          <%= simple_form_for(:dates, url: new_pet_booking_path(@pet), method: :get) do |f| %>
-            <%=f.input :starts_at, as: :date   %>
-            <%=f.input :ends_at, as: :date   %>
-            <%= f.submit "book" %>
-          <% end %>
-      <% else %>
-        <%= simple_form_for @pet, url: pet_path(@pet), method: :delete do |f|%>
-        <%= f.submit "Delete"%>
+    <div class="pet-img-pricing">
+      <p> <%= @pet.price %>$ per week</p>
+      <h3>Book the lovely <%= @pet.name %></h3>
+      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+        <h2>Flatpickr Demo</h2>
+        <%= simple_form_for :search, method: "get" do |f| %>
+        <%= f.input :starts_at, as: :string, required: false, input_html: { id: "range_start" } %>
+        <%= f.input :ends_at, as: :string, required: false, input_html:{ id: "range_end" } %>
+        <%= f.button :submit, "Go", class: "btn btn-primary" %>
         <% end %>
+      </div>
+      <% else %>
+      <%= simple_form_for @pet, url: pet_path(@pet), method: :delete do |f|%>
+      <%= f.submit "Delete"%>
+      <% end %>
       <% end %>
     </div>
   </div>
