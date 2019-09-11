@@ -10,8 +10,8 @@
         params[:location],
         class: "form-control",
         placeholder: "Tel Aviv" %>
-        <label> Type of animal</label>
-        <%= select_tag(:animal, options_for_select(@animal_array)) %>
+        <label> Type of animal</label><br>
+        <%= select_tag(:animal, options_for_select(@animal_array)) %><br>
         <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
         </div>

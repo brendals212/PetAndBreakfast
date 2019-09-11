@@ -4,8 +4,9 @@ class PetsController < ApplicationController
 
   def index
     # process input from search form
+
     if params[:location] && params[:animal]
-      @pets = Pet.where(location: params[:location], pet_type: params[:animal])
+      @pets = Pet.where("location ILIKE?", "%#{params[:location]}%").where("pet_type ILIKE?", "%#{params[:animal]}%")
     else
       @pets = Pet.all
     end
