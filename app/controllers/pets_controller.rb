@@ -6,23 +6,20 @@ class PetsController < ApplicationController
     # process input from search form
 
     if params[:location] && params[:animal]
-      @pets = Pet.where("location ILIKE?", "%#{params[:location]}%").where("pet_type ILIKE?", "%#{params[:animal]}%")
+      @pets = Pet.where("pet_type ILIKE?", "%#{params[:animal]}%").near(params[:location], 20)
     else
       @pets = Pet.all
     end
+
     @users = User.geocoded
     @markers = []
-    @users.each do |user|
-      if user.pets.empty?
-        next
-      else
+    @pets.where.not(latitude: nil, longitude: nil).each do |pet|
         @markers << {
-          lat: user.latitude,
-          lng: user.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { user: user })
+          lat: pet.latitude,
+          lng: pet.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { pet: pet })
         }
       end
-    end
   end
 
   def new
