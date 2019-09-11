@@ -35,6 +35,7 @@ i = 0
   user.save
   if user.persisted?
     pet = Pet.new(
+      location: user.address,
       name: Faker::Name.name,
       remote_photo_url: "https://placedog.net/50#{i}",
       age: Faker::Number.between(from: 1, to: 10),
