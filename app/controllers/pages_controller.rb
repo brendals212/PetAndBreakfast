@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+
     @pets = Pet.all
     # raise
     # prepare data for search form
@@ -9,5 +10,6 @@ class PagesController < ApplicationController
       animal.capitalize!
       @animal_array[index] = [animal, animal]
     end
+    @pet_list = Pet::PET_LIST.map { |pet| pet.capitalize }
   end
 end
