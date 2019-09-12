@@ -43,11 +43,9 @@ h3 {
 }
 
 .carousel-dimension {
-
-  width: 700px;
-  margin: 0 auto;
-  .carousel-item {
-    height:400px;
+  width: 500px;
+  .carousel-item{
+    height:300px;
   }
 }
 
@@ -78,7 +76,19 @@ h3 {
   margin-top: 23px;
 }
 
-// .carou-img{
-//  } height:300px;
-//   width:500px;
-// }
+.pet-4-rent{
+  margin-bottom: 30px;
+  .pets-avatar-container{
+      display: flex;
+      justify-content: space-evenly;
+    }
+  .pets{
+    margin: 10px;
+  }
+}
+.carousel-center{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
