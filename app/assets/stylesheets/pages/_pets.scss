@@ -32,14 +32,14 @@
   display: flex;
   align-items: flex-start;
   .cards-container  {
-    width: 50%;
+    width: 85%;
     height: 80%;
     display: flex;
     overflow-y: scroll;
     overflow-x: hidden;
     flex-wrap: wrap;
     .card-trip {
-      width: 40%;
+      width: 30%;
     }
   }
   .map-container {
