@@ -23,6 +23,7 @@ class PetsController < ApplicationController
   end
 
   def new
+    @pet_list = Pet::PET_LIST.map { |pet| pet.capitalize }
     @pet = Pet.new
   end
 

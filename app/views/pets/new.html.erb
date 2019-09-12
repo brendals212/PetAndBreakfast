@@ -5,10 +5,11 @@
 </div>
 <%= simple_form_for @pet do |f| %>
 <%= f.input :name %>
-<%= f.input :pet_type %>
+<%= f.input :pet_type, collection: @pet_list %>
 <%= f.input :breed %>
 <%= f.input :age %>
 <%= f.input :color %>
+<%= f.input :location, input_html: {value: current_user.address} %>
 <%= f.input :description %>
 <%= f.input :needs %>
 <%= f.input :price %>
