@@ -45,6 +45,9 @@ h3 {
 .carousel-dimension {
   width: 500px;
   margin: 0 auto;
+  .carousel-item{
+    height:300px;
+  }
 }
 
 .search-container {
@@ -56,7 +59,7 @@ h3 {
   margin-top: 23px;
  }
 
-.carou-img{
-  height:300px;
-  width:500px;
-}
+// .carou-img{
+//   height:300px;
+//   width:500px;
+// }
