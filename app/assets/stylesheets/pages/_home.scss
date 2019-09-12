@@ -43,20 +43,33 @@ h3 {
 }
 
 .carousel-dimension {
-  width: 500px;
+
+  width: 700px;
   margin: 0 auto;
+  .carousel-item {
+    height:400px;
+  }
 }
 
 .search-container {
   background:white;
   border: 50px;
   padding: 20px;
- }
- .w-100 {
-  margin-top: 23px;
- }
+}
 
-.carou-img{
-  height:300px;
-  width:500px;
+
+.pets {
+  height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 200px;
+}
+.pets h2 {
+  font-size: 40px;
+  margin-right: 20px;
+}
+.col {
+  margin-bottom: 20px;
 }
