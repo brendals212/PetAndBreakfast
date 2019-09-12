@@ -1,5 +1,10 @@
 require 'date'
 class BookingsController < ApplicationController
+
+  def index
+    @user_id = current_user.id
+    @bookings = Booking.where(user_id: @user_id)
+  end
   def show
     @booking = Booking.find(params[:id])
     @pet = @booking.pet
