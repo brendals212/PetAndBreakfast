@@ -1,10 +1,11 @@
 <div class="container">
-  <h1>Confirm Booking</h1>
+
   <div class="details">
     <div class="booking-details">
-         <h3> <%= @start_date %> ---> <%= @end_date %></h3>
+       <h1>Confirm Booking</h1>
+         <h3> <%= @start_date %> <i class="fas fa-arrow-right">&nbsp; </i><%=  @end_date %></h3>
          <p>(<%= @days.to_i %> days)</p>
-         <img src=<%= @owner.photo  %> alt="">
+         <%= cl_image_tag @owner.photo  %>
          <p>  The price is <%= @cost %>$</p>
           <ul>
             <li>Address - <%= @owner.address %></li>

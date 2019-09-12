@@ -33,7 +33,7 @@
           <% @pets.each do |pet| %>
             <%pet.bookings.each do |booking|  %>
 
-              <li><%= booking.user.name %> - "<%= booking.review %>"</li>
+              <li><%= booking.user.name %> - <%= booking.pet.name%> "<%= booking.review %>"</li>
             <% end %>
           <% end %>
         </ul>

@@ -53,10 +53,28 @@ h3 {
   background:white;
   border: 50px;
   padding: 20px;
- }
- .w-100 {
+}
+
+
+.pets {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 200px;
+}
+.pets h2 {
+  font-size: 40px;
+  margin-right: 20px;
+}
+.col {
+  margin-bottom: 20px;
+
+}
+.w-100 {
   margin-top: 23px;
- }
+}
 
 .pet-4-rent{
   margin-bottom: 30px;
@@ -73,3 +91,4 @@ h3 {
   justify-content: space-around;
   margin-bottom: 50px;
 }
+
