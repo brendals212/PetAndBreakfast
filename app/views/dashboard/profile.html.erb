@@ -9,12 +9,11 @@
 
             <p><%= link_to "Update photo", edit_dashboard_path(current_user) %></p>
           <% end %>
-          <hr></hr>
-          <p>Already rented <strong><%=@user.bookings.count%></strong> pets!</p>
-          <hr></hr>
-          <p><%= @user.address %></p>
-          <p><%= @user.email %></p>
-
+            <hr></hr>
+            <p>Already rented <strong><%=@user.bookings.count%></strong> pets!</p>
+            <hr></hr>
+            <p><%= @user.address %></p>
+            <p><%= @user.email %></p>
           <%# if current_user %>
 
           <%# end %>
